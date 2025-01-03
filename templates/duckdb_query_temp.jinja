@@ -1,0 +1,5 @@
+{%- if filter_by_column == "1" -%} 
+    {{ sql_text }}
+{% else %}
+    {{ sql_text }} WHERE {{ filter_by_column }} = '{{ filter_by_value }}'
+{% endif %}
