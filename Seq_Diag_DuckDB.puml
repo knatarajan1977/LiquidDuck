@@ -1,0 +1,18 @@
+@startuml
+
+User -> Python: Enters the filter column and value
+
+Python -> DuckDB: Grouping Sets base query is framed 
+
+DuckDB -> Jinja2: Base Query and filter condition is sent
+
+Jinja2 -> Jinja2: Template substitutes values in the query test
+
+DuckDB <-- Jinja2: Query Text with WHERE clause
+
+Python <-- DuckDB: Query is executed
+
+User <-- Python: User gets the data in the result
+
+@enduml
+
