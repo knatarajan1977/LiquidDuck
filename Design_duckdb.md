@@ -30,12 +30,19 @@ This query is union-ed with the goals data at all levels. The static enum for th
 SELECT 0 leaf_level, supplier, ...., group, category, sales, null <each goal> FROM SALES
 union
 SELECT 1, supplier, ...., null group, null category, null sales, supplier_goal FROM SUPPLIER_GOALS
+
 UNION
+
 SELECT 1, supplier, brand, ..., null group, null category, null sales, null supplier_goal, brand_goal FROM BRAND_GOALS
+
 ...
+
 UNION
+
 SELECT 1, null supplier, null brand, ...., group, null category, null sales, group_goals FROM GROUP_GOALS
+
 UNION
+
 SELECT 1, null supplier, null brand, ...., null group, category, null sales, category_goals FROM CATEGORY_GOALS
 
 Then, a new query with GROUPING SETS caluse in the GROUP BY is applied at the below levels:
