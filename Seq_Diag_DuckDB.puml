@@ -1,4 +1,4 @@
-@startuml
+@startuml duckdb_grouping
 
 User -> Python: Enters the filter column and value
 

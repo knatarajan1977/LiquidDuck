@@ -15,8 +15,8 @@ def grouping_sets_using_duckdb(filter_column: str = '1', filter_value: str = '1'
 
     logger.info ("Creating the Sales Table in Duckdb")
     cr_sales_tab = """create or replace table sales (supplier varchar, brand varchar, 
-            family varchar, groups varchar,
-            category varchar, sales numeric(10,2))"""
+                      family varchar, groups varchar,
+                      category varchar, sales numeric(10,2))"""
 
     dkdb_conn.sql (cr_sales_tab)
     dkdb_conn.sql ("""insert into sales values 
